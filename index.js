@@ -23,7 +23,7 @@ const list = (await Promise.all(countries.map(async country => {
     })
 }))).flat()
 
-Deno.writeTextFileSync("list.json", list);
+Deno.writeTextFileSync("list.json", JSON.stringify(list));
 
 function licenseToSpdx(code) {
     if(code === "CC0_10") return "CC0-1.0";
